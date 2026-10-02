@@ -1,0 +1,65 @@
+Antes de usar o sistema pela primeira vez (ou sempre que quiser resetar o disco),
+você precisa formatá-lo:
+
+    python gerenciador.py
+
+Isso criará um arquivo "disk.img" de 128 MB com:
+- Superbloco (metadados do sistema)
+- Bitmaps de controle (blocos e inodes livres)
+- Tabela de inodes (4.096 inodes disponíveis)
+- Diretório raiz "/" inicializado
+
+
+---  INICIAR O SHELL
+
+
+Para iniciar o sistema de arquivos interativo:
+
+    python shell.py
+
+Você verá o prompt:
+    Sistema de arquivo ligado. Digite 'help' ou '?' para listar comandos.
+    fs>
+
+
+--- COMANDOS DISPONÍVEIS
+
+
+NAVEGAÇÃO
+---------
+pwd                     - Mostra o diretório atual
+cd <diretorio>          - Entra em um diretório
+cd ..                   - Volta para o diretório pai
+cd /                    - Vai para a raiz
+
+LISTAGEM
+--------
+ls                      - Lista arquivos e diretórios (ocultos não aparecem)
+ls -a                   - Lista TUDO (inclui . e ..)
+ls <caminho>            - Lista o conteúdo de um caminho específico
+
+CRIAÇÃO
+-------
+mkdir <nome>            - Cria um novo diretório
+touch <arquivo>         - Cria um arquivo vazio
+echo <texto> > <arq>    - Cria/sobrescreve arquivo com texto
+echo <texto> >> <arq>   - Adiciona texto ao final do arquivo
+
+LEITURA
+-------
+cat <arquivo>           - Mostra o conteúdo de um arquivo
+
+REMOÇÃO
+-------
+rm <arquivo>            - Remove um arquivo
+rmdir <diretorio>       - Remove um diretório VAZIO
+
+MANIPULAÇÃO
+-----------
+cp <origem> <destino>   - Copia um arquivo
+mv <origem> <destino>   - Move ou renomeia um arquivo/diretório
+ln -s <alvo> <link>     - Cria um link simbólico (atalho)
+
+SAÍDA
+-----
+quit                    - Sai do shell e desmonta o sistema
