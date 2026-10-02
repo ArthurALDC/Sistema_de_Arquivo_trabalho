@@ -160,7 +160,7 @@ class TerminalFS(cmd.Cmd):
 
         try:
             if mostrar_tudo:
-                # listar_inodes_filhos é a fonte crua — inclui '.' e '..'.
+                # listar_inodes_filhos é a fonte cru, inclui '.' e '..'.
                 itens = [f.nome for f in listar_inodes_filhos(alvo)]
             else:
                 # listar_diretorio já filtra '.' e '..'.
